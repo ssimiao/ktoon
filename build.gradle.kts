@@ -8,12 +8,12 @@ version = "0.0.1"
 
 publishing {
     publications {
-        maven(MavenPublication) {
-            groupId = 'io.magesoftware'
-            artifactId = 'ktoon'
-            version = '0.0.1'
+        create<MavenPublication>("mavenJava") {
+            groupId = "io.magesoftware"
+            artifactId = "ktoon"
+            version = "0.0.1"
 
-            from components.java
+            from(components["java"])
         }
     }
     repositories {
@@ -21,6 +21,7 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/ssimiao/abacatepay-kotlin-sdk")
             credentials {
+                // Ensure environment variables are correctly accessed
                 username = System.getenv("USERNAME")
                 password = System.getenv("TOKEN")
             }
