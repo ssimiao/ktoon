@@ -23,7 +23,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/ssimiao/abacatepay-kotlin-sdk")
+            url = uri("https://maven.pkg.github.com/ssimiao/ktoon")
             credentials {
                 // Ensure environment variables are correctly accessed
                 username = System.getenv("USERNAME")
