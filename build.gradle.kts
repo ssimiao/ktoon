@@ -6,29 +6,6 @@ plugins {
 group = "io.magesoftware"
 version = "0.0.1"
 
-publishing {
-    publications {
-        create<MavenPublication>("mavenJava") {
-            groupId = "io.magesoftware"
-            artifactId = "ktoon"
-            version = "0.0.1"
-
-            from(components["java"])
-        }
-    }
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/ssimiao/abacatepay-kotlin-sdk")
-            credentials {
-                // Ensure environment variables are correctly accessed
-                username = System.getenv("USERNAME")
-                password = System.getenv("TOKEN")
-            }
-        }
-    }
-}
-
 repositories {
     mavenCentral()
 }
